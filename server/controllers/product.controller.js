@@ -37,7 +37,7 @@ module.exports.deleteAllProducts = (req,res) => {
 module.exports.updateProduct = (req,res) => {
     Product.updateOne({_id: req.params._id}, req.body)
     .then(results=>res.json({results: results}))
-    .catch(err=>res.status(400).json({message: "Failed to update Product: ",error: err}))
+    .catch(err=>res.status(400).json(err))
 }
 
 module.exports.findRandomProduct = (req,res) => {
